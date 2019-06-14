@@ -1,6 +1,6 @@
 ## Step2Hack
 
-My first note scripts to building great anonimous libs.
+My first note scripts to building great anonymous libs.
 
 Example:
 
