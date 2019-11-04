@@ -1,4 +1,4 @@
-## using `chr()` and `ord()`:
+## Using `chr()` and `ord()`:
 
 1. using `chr()` function:
 ```python

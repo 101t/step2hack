@@ -1,4 +1,4 @@
-## using `__import__()` magic method
+## Using `__import__()` magic method
 
 1. using `__import__()` method as alternative import way of any package or built-in library in python
 ```python
