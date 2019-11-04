@@ -47,15 +47,21 @@ Using `__name__` is going to help a bit as well, because it's formatted as a Pyt
 
 We can get str straight off the bat fairly easily:
 
-`str == __name__.__class__`
+```python
+str == __name__.__class__
+```
 
 From str we can get to bytes, which will eventually let us get to numbers.
 
-`bytes == __name__.__class__.encode(__name__).__class__`
+```python
+bytes == __name__.__class__.encode(__name__).__class__
+```
 
 Next, we're going to get all the way to int, which will let us construct 0 for our script.
 
-`int == __name__.__class__.encode(__name__).count(__name__.__class__.encode(__name__)).__class__`
+```python
+int == __name__.__class__.encode(__name__).count(__name__.__class__.encode(__name__)).__class__
+```
 
 Basically we convert our `__name__` into bytes, and then call the count method on it.
 
@@ -65,7 +71,9 @@ This returns us 1, but we don't actually have to care about the value of that nu
 
 Finally, we can get our 0:
 
-`0 == (__name__.__class__.encode(__name__).count(__name__.__class__.encode(__name__)).__class__())`
+```python
+0 == (__name__.__class__.encode(__name__).count(__name__.__class__.encode(__name__)).__class__())
+```
 
 We wrap the number in brackets for sanity's sake, so that Python's operator precedence doesn't start making us confused as we go along.
 
@@ -77,15 +85,21 @@ You can get these characters however you like, but to make it nice and unobvious
 
 If you get the `__class__` of any of Python's fundamental types, you'll get type back. Which means you can string together a ton of superfluous calls to make something like:
 
-`type == __name__.__class__.__class__.__name__.__class__.__class__`
+```python
+type == __name__.__class__.__class__.__name__.__class__.__class__
+```
 
 Which let's us get a larger number, in this case 101:
 
-`101 == ord(__name__.__class__.__class__.__name__.__class__.__class__.__name__[3])`
+```python
+101 == ord(__name__.__class__.__class__.__name__.__class__.__class__.__name__[3])
+```
 
 And that let's us create individual characters in a non-obvious manner easily enough:
 
-`'a' == chr(ord(__name__.__class__.__class__.__name__.__class__.__class__.__name__[3]) - 4)`
+```python
+'a' == chr(ord(__name__.__class__.__class__.__name__.__class__.__class__.__name__[3]) - 4)
+```
 
 This has the added benefit of introducing magic numbers, which we can disappear some using the other numbers we can gather.
 
@@ -266,4 +280,4 @@ We've just turned a 129 character file into a 47,928 character file that should 
 
 However, if you're doing it for fun or competition, it's certainly interesting what tricks you can use to frustrate the human trying to develop a tool to reverse whatever you've written.
 
-[Source](https://gist.github.com/shakna-israel/03172c2c06e1f6622764541dc8b4246b)
+Original [Source](https://gist.github.com/shakna-israel/03172c2c06e1f6622764541dc8b4246b)
