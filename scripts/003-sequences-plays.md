@@ -87,11 +87,11 @@ def flatten(sqnc):
 [1, 2, 3, 4, 5, 6, 7, 8, 1, 2]
 ```
 
-### 2. using [https://en.wikipedia.org/wiki/Monoid#Monoids_in_computer_science](Monoid) way, inefficient, But fun
+### 2. using [Monoid](https://en.wikipedia.org/wiki/Monoid#Monoids_in_computer_science) way, inefficient, But fun
 
 ```python
 >>> list_of_lists = [[1, 2, 3], [4, 5, 6], [7], [8, 9]]
 >>> sum(list_of_lists, [])
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
-source: [https://stackoverflow.com/a/952946/1756032](here)
+source: [here](https://stackoverflow.com/a/952946/1756032)
