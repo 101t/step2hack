@@ -67,6 +67,8 @@ The symmetric difference of two sets A and B is the set `(s1 – s2) ∪ (s2 –
 
 ## flattening tuple of tuples (or list of lists):
 
+### 1. using flatten method
+
 ```python
 def flatten(sqnc):
 	if sqnc:
@@ -84,3 +86,12 @@ def flatten(sqnc):
 >>> flatten((1,2,3,(4,5,6,(7,8,(((1,2)))))))
 [1, 2, 3, 4, 5, 6, 7, 8, 1, 2]
 ```
+
+### 2. using [https://en.wikipedia.org/wiki/Monoid#Monoids_in_computer_science](Monoid) way, inefficient, But fun
+
+```python
+>>> list_of_lists = [[1, 2, 3], [4, 5, 6], [7], [8, 9]]
+>>> sum(list_of_lists, [])
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+source: [https://stackoverflow.com/a/952946/1756032](here)
